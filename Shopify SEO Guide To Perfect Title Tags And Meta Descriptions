@@ -1,0 +1,22 @@
+<b>You can influence what gets displayed in search results with HTML code on the website that looks like:</b>
+
+<title>Your title is here</title>
+<meta name="description" content="Your description is here" />
+
+<b>How To Edit The Title Tags In Your Shopify Template</b>
+<p>If the SEO text is not displaying how you want as per the previous section, you need to edit the template. Warning: do not edit your store’s template unless you know HTML and can easily undo your changes. Otherwise spend a few dollars on hiring a freelancer from UpWork and spend your time doing other valuable tasks. To make the edit:</p>
+1.In the admin section, go to Online Store > Themes
+2.Click “Actions” on your live them then select “Edit Code”:
+3.Click on the “theme.liquid” file on the left side. This is where you can edit the Shopify theme’s title tags and meta descriptions.
+4.Find the text between <title> and </title> then replace it with this for removed store Name from meta title:
+
+<title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+
+<b>How To Edit The Meta Description Tag In Your Shopify Theme</b>
+This is a lot easier to get right in your template and is often already setup.
+
+1.Go to your theme.liquid template
+2.Find the line that begins with <meta name="description" then replace it with:
+<meta name="description" content="{{ page_description | escape }}" />
+3.If your file does not have this, copy-and-paste the text after the closing title tag (</title>)
+Congratulations. Your Shopify store’s title tags and meta descriptions are now ready to be optimised. Let’s continue to do your on-page SEO right to boost visitors and sales.
