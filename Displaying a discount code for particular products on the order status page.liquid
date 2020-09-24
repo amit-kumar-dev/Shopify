@@ -1,0 +1,20 @@
+Displaying a discount code for particular products on the order status page
+One of the most useful applications of the additional scripts box is to display specific content depending on certain conditions of an order. Adding this level of personalization makes the sales flow more specialized, and an unexpected gesture of goodwill can encourage repeat sales.
+
+For example, a client might like to offer a discount code following the purchase of a particular product. Using JavaScript and Liquid logic, it’s possible to output specific content when a particular product has been purchased.
+
+To achieve this effect, we need to create a script which generates a content box when specific parameters are triggered. In this case, the parameter will be the product title, and the script could look like this:
+
+<script>
+  {% for line in checkout.line_items %}
+    <!-- DEBUG looking at {{ line.title }} -->
+    {% if line.title == 'Red Sports Tee' %}
+      Shopify.Checkout.OrderStatus.addContentBox(
+       '<h2>Thanks for your order</h2>', 
+       '<p>Have a 10% discount on us! Use AWESOME18 with your next purchase</p>'
+      )
+    {% endif %}
+  {% endfor %}
+</script>
+
+
