@@ -9,8 +9,11 @@
 2.Click “Actions” on your live them then select “Edit Code”:
 3.Click on the “theme.liquid” file on the left side. This is where you can edit the Shopify theme’s title tags and meta descriptions.
 4.Find the text between <title> and </title> then replace it with this for removed store Name from meta title:
-
 <title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+
+by this
+
+<title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}</title>
 
 <b>How To Edit The Meta Description Tag In Your Shopify Theme</b>
 This is a lot easier to get right in your template and is often already setup.
