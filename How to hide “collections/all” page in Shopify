@@ -1,0 +1,16 @@
+The “collections/all” page is automatically created by Shopify. This page will show all published products of the Shopify store. For some reason, you may not want visitors to this page. Yes, you can do that.
+
+From your Shopify admin, go to Online Store > Themes.
+Find the theme you want to edit, and then click Actions > Edit code.
+In the Templates directory, click collection.liquid.
+Insert below code to the top of this file
+
+{% if collection.handle == 'all' %}
+<script>window.location.replace("/");</script>
+{% else %}
+{% if collection.handle == 'all' %}
+<script>window.location.replace("/");</script>
+{% else %}
+{% endif %}
+
+Save it
