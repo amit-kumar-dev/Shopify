@@ -1,0 +1,21 @@
+Thought this might be helpful for some of you. If you don't have an SEO plugin that handles it you can edit your theme.liquid file and add something like this:
+
+  {% comment %} Handle certain pages manually which aren't available in the backend such as all products {% endcomment %}
+  {%- if collection.title == 'Products' -%}
+  {% assign seo_title = "INSERT PAGE TITLE HERE" %}
+  {% assign page_description = "INSERT PAGE DESCRIPTION HERE" %}
+  {%- endif -%}
+  
+  
+  
+  I added it right before the opening title tag so it would set those variables before the theme file requested them:
+
+  {% comment %} Handle certain pages manually which aren't available in the backend such as all products {% endcomment %}
+  {%- if collection.title == 'Products' -%}
+  {% assign seo_title = "INSERT PAGE TITLE HERE" %}
+  {% assign page_description = "INSERT PAGE DESCRIPTION HERE" %}
+  {%- endif -%}
+  <title>{{ seo_title | strip collection.title }}</title>
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
