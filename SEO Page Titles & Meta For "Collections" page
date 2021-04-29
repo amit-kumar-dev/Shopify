@@ -1,8 +1,8 @@
-
+ <!-- Normal action if it's not the /collections page-->
+ 
 {% if template == 'list-collections' %}
    <!--Your custom <meta> tags-->
 <title>The Title Goes Here</title>
 <meta name="description" content="New meta description goes here" />
 {% else %}
-   <!-- Normal action if it's not the /collections page-->
 {% endif %}
