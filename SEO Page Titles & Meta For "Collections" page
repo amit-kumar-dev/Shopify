@@ -6,3 +6,13 @@
 <meta name="description" content="New meta description goes here" />
 {% else %}
 {% endif %}
+
+ <!-- Normal action if it's not the /collections page-->
+www.example.com /collections/all
+
+{% if collection.handle == 'all' %}
+   <!--Your custom <meta> tags-->
+<title>The Title Goes Here</title>
+<meta name="description" content="New meta description goes here" />
+{% else %}
+{% endif %}
