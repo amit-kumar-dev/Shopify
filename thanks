@@ -1,0 +1,3 @@
+// this code will be placed in below form above the button
+
+<input type="hidden" name="return_to" value="/pages/thank-you">
